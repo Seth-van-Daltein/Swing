@@ -17,9 +17,6 @@ public class Main {
         JFrame jFrame = new JFrame() {
         };
 
-        //Робимо вікно видимим
-        jFrame.setVisible(true);
-
         //Робимо щоб нормально закривати програму
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -34,6 +31,9 @@ public class Main {
         //Change image of the Window
         ImageIcon img = new ImageIcon("./images/iconImage.png");
         jFrame.setIconImage(img.getImage());
+
+        //Робимо вікно видимим
+        jFrame.setVisible(true);
 
         return jFrame;
 
