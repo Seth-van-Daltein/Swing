@@ -2,11 +2,29 @@ package maxim.kuzemskyi;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Main {
+
     public static void main(String[] args) {
         JFrame jFrame = getFrame();
-        jFrame.add(new JButton("dd"));
+
+        //Панелька для розміщення елементів
+        JPanel jPanel = new JPanel();
+        jFrame.add(jPanel);
+
+        JButton jButton = new JButton("submit");
+        jPanel.add(jButton);
+
+        //Дія після натискання кнопки
+        jButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jPanel.setBackground(Color.blue);
+            }
+        });
+
     }
 
 
