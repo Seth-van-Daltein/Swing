@@ -4,9 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.beans.EventHandler;
 
 public class Main {
 
+    JButton red;
     public static void main(String[] args) {
         JFrame jFrame = getFrame();
 
@@ -17,14 +19,21 @@ public class Main {
         JButton jButton = new JButton("submit");
         jPanel.add(jButton);
 
-        //Дія після натискання кнопки
-        jButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                jPanel.setBackground(Color.blue);
-            }
-        });
 
+//        jButton.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                jFrame.setTitle(((JButton)e.getSource()).getText());
+//            }
+//        });
+
+        //прикла використання Event Handler
+        /*
+            target - предмет, який буде виконувати дію
+            action - ім'я властивості або методу цільового об'єкта(об'єкт або метод до якого буде застосовуватися дія)
+            eventPropertyName - ім'я читабельної властивості вхідної події
+         */
+        jButton.addActionListener(EventHandler.create(ActionListener.class, /*target*/jFrame, "title", "source.text"));
     }
 
 
