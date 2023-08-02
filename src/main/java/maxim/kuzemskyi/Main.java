@@ -6,7 +6,7 @@ import java.awt.*;
 public class Main {
     public static void main(String[] args) {
         JFrame jFrame = getFrame();
-
+        jFrame.add(new JButton("ff"));
     }
 
 
