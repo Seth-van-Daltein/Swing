@@ -2,13 +2,11 @@ package maxim.kuzemskyi;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.EventHandler;
 
 public class Main {
 
-    JButton red;
     public static void main(String[] args) {
         JFrame jFrame = getFrame();
 
