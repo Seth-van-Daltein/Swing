@@ -14,14 +14,54 @@ public class Main {
         JPanel jPanel = new JPanel();
         jFrame.add(jPanel);
 
-        JButton jButton = new JButton("submit");
-        jPanel.add(jButton);
+        JButton jButton1 = new JButton("blue");
+        JButton jButton2 = new JButton("red");
+        JButton jButton3 = new JButton("yellow");
+        JButton jButton4 = new JButton("green");
+
+
+        jPanel.add(jButton1);
+        jPanel.add(jButton2);
+        jPanel.add(jButton3);
+        jPanel.add(jButton4);
+
+//        String sColor = "";
 
         //Дія після натискання кнопки
-        jButton.addActionListener(new ActionListener() {
+        jButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 jPanel.setBackground(Color.blue);
+                String sColor = jButton1.getText();
+                System.out.println(sColor);
+            }
+        });
+
+        jButton2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jPanel.setBackground(Color.red);
+                String sColor = jButton2.getText();
+                System.out.println(sColor);
+            }
+        });
+
+        jButton3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jPanel.setBackground(Color.yellow);
+                String sColor = jButton3.getText();
+                System.out.println(sColor);
+
+            }
+        });
+
+        jButton4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jPanel.setBackground(Color.green);
+                String sColor = jButton4.getText();
+                System.out.println(sColor);
             }
         });
 
