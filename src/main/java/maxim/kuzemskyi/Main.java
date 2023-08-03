@@ -2,6 +2,7 @@ package maxim.kuzemskyi;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.EventHandler;
 
@@ -13,25 +14,93 @@ public class Main {
         //Панелька для розміщення елементів
         JPanel jPanel = new JPanel();
         jFrame.add(jPanel);
+//
+        JButton jButton1 = new JButton("Metal");
+        JButton jButton2 = new JButton("Nimbus");
+        JButton jButton3 = new JButton("Motif");
+        JButton jButton4 = new JButton("Windows");
+        JButton jButton5 = new JButton("Windows Classic");
 
-        JButton jButton = new JButton("submit");
-        jPanel.add(jButton);
+        jPanel.add(jButton1);
+        jPanel.add(jButton2);
+        jPanel.add(jButton3);
+        jPanel.add(jButton4);
+        jPanel.add(jButton5);
+
+        jButton1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException |
+                         UnsupportedLookAndFeelException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
+        jButton2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException |
+                         UnsupportedLookAndFeelException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
+        jButton3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
+                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException |
+                         UnsupportedLookAndFeelException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
+        jButton4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException |
+                         UnsupportedLookAndFeelException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
+        jButton5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel");
+                } catch (ClassNotFoundException | InstantiationException | IllegalAccessException |
+                         UnsupportedLookAndFeelException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
 
 
-//        jButton.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                jFrame.setTitle(((JButton)e.getSource()).getText());
-//            }
-//        });
 
-        //прикла використання Event Handler
+
         /*
-            target - предмет, який буде виконувати дію
-            action - ім'я властивості або методу цільового об'єкта(об'єкт або метод до якого буде застосовуватися дія)
-            eventPropertyName - ім'я читабельної властивості вхідної події
+            Переглянути всі стандартні LookAndFeelInfo`s
          */
-        jButton.addActionListener(EventHandler.create(ActionListener.class, /*target*/jFrame, "title", "source.text"));
+//        UIManager.LookAndFeelInfo[] lookAndFeelInfos = UIManager.getInstalledLookAndFeels();
+//        for (UIManager.LookAndFeelInfo lookAndFeelInfo : lookAndFeelInfos) {
+//            System.out.println(lookAndFeelInfo.getName());
+//            System.out.println(lookAndFeelInfo.getClassName());
+//        }
+
+
+
     }
 
 
