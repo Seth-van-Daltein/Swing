@@ -84,7 +84,7 @@ public class Main {
         jFrame.setBounds(dimension.width / 2 - 250, dimension.height / 2 - 150, 500, 300); //розташування вікна рівно по центру
 
         //Change title(name) of the Window
-        jFrame.setTitle("Test App");
+        jFrame.setTitle("KANEKI");
 
         //Change image of the Window
         ImageIcon img = new ImageIcon("./images/iconImage.png");
